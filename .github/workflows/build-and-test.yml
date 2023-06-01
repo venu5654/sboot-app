@@ -37,7 +37,7 @@ jobs:
             # If commit message has @@mobile, ignore desktop and execute only for mobile
             matrix=$(echo $combs | sed -e 's/"desktop", //')
           else
-            matrix=$combs
+            matrix=$combs+
           fi
           echo "matrix=$matrix" >> $GITHUB_OUTPUT
 
