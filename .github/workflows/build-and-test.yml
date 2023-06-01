@@ -33,7 +33,7 @@ jobs:
         run: |
           echo Commit message: ${{ github.event.head_commit.message }}
           combs='{"browser": ["chrome", "firefox"], "device": ["desktop", "mobile"]}'
-          if [[ "${{ github.event.head_commit.message }}" == *@@mobile* ]]; then
+          if [[ "${{ github.event.head_commit.message }}" == *@@desktop* ]]; then
             # If commit message has @@mobile, ignore desktop and execute only for mobile
             matrix=$(echo $combs | sed -e 's/"desktop", //')
           else
